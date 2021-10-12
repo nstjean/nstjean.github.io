@@ -13,14 +13,9 @@ html {
 	height: 100%;
 }
 
-h1 {
-	font-weight: 700;
-	font-size: 2.5em;
-    line-height: 2.7rem;
-}
-
 h2 {
 	font-size: 2.5em;
+	margin-block-end: 5rem;
 }
 
 h3 {
@@ -53,6 +48,12 @@ ul {
 
 .solid-bg {
 	background-color: white;
+	color: #3D3D3D;
+}
+
+.transparent-bg {
+	background-color: transparent;
+	color: white;
 }
 
 article {
@@ -60,6 +61,12 @@ article {
 	margin: auto;
 	padding: 100px 2rem;
 	font-size: 1.05rem;
+}
+article.narrow {
+	max-width: 500px;
+}
+h2.small-padding {
+	margin-block-end: 2.5rem;
 }
 
 
@@ -75,15 +82,20 @@ body {
 	background-attachment: fixed;
 }
 
+/*
+ *	BANNER/TOP
+ */
 header {
 	height: 100%;
 	display: flex;
-	justify-content: center;
+	flex-direction: column;
+	justify-content: space-between;
 	align-items: center;
 }
-
 h1 {
-	font-size: 2.4em;
+	font-weight: 700;
+	font-size: 2.5em;
+    line-height: 2.7rem;
 	font-family: 'Questrial', sans-serif;
 	color: white;
 	text-align: center;
@@ -101,10 +113,16 @@ nav {
 	top: 0;
 	left: 0;
 	width: 100%;
+	padding: 1.2rem 0;
+	background-color: #1d158b;
+	background-image: url('images/background-full.png');
+	background-position: center top;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	background-color: #2C22AE;
 }
 nav .brand {
 	flex: 0 0 auto;
@@ -127,27 +145,30 @@ nav li {
 }
 nav li a, nav .brand a {
 	display: inline-block;
-	margin: 1.8rem;
+	margin: 0 1.8rem;
 	color: white;
 	font-size: 1.1rem;
 	text-decoration: none;
     transition: all .2s ease-out;
+	padding: 6px 0;
+	border-bottom: 2px solid transparent;
 }
 nav li a:hover, nav .brand a:hover {
-	color: rgb(18, 185, 191);
-/*	font-weight: bold;*/
+	color: white;
 	text-decoration: none;
+	/* background: rgba(0, 0, 0, 0.3); */
+	border-bottom: 2px solid rgba(255, 255, 255, 0.9);
 }
 #toggle {
 	display: none;
 	flex: 0 1 auto;
-	height: 36px;
+	height: 24px;
 	padding-left: 0.8rem;
 }
 #toggle i {
  	color: white;
- 	font-size: 36px;
-	height: 36px;
+ 	font-size: 24px;
+	height: 24px;
     transition: all .2s ease-out;
 }
 #toggle i:hover {
@@ -167,6 +188,7 @@ nav li a:hover, nav .brand a:hover {
 @media (max-width: 645px) {
 	.brand {
 		width: 100%;
+		margin: 1rem 0.5rem;
 	}
 	#toggle {
 		display: block;
@@ -183,13 +205,14 @@ nav li a:hover, nav .brand a:hover {
 	#menu-right {
 		margin-bottom: 1rem;
 	}
-	nav {
+	nav, #menu-right {
 		flex-direction: column;
 		align-items: flex-start;
 	}
 	nav ul {
 		height: auto;
 		align-items: flex-start;
+		width: 100%;
 	}
 	nav li {
 		flex: 1 1 100%;
@@ -198,54 +221,49 @@ nav li a:hover, nav .brand a:hover {
 	nav li a {
 		width: 100%;
 		margin: 1rem 2rem;
+		border-bottom: 0;
+		padding: 0;
+	}
+	nav li a:hover {
+		border-bottom: 0;
+		padding-bottom: 0;
+		border-left: 3px solid white;
+		padding-left: 1rem;
 	}
 }
 
-
-/* CONTACT FORM */
-
-.form-container {
-	margin-top: 40px;
+/* FORM */
+form label {
+	margin-top: 0.5rem;
+}
+input.btn {
+	margin-top: 1rem;
 }
 
-.form-container .messages {
-	margin-bottom: 20px;
-}
-
-.btn-success {
-	background-color: rgb(99, 45, 247);
-	border-color: rgb(99, 45, 247);
-}
-
-.btn-success:hover {
-	background-color: rgb(97, 147, 255);
-	border-color: rgb(97, 147, 255);
-}
-
-.btn-success:disabled {
-	background-color: #7B7B7B;
-	border-color: #7B7B7B;
-}
-
-#contactForm h2 {
-	margin-bottom: 14px;
-}
-
-#contactForm p {
-	font-size: 1.1em;
-}
 
 
 /* FOOTER */
 
-#footer {
-	margin-top: 60px;
+footer {
+	margin-top: 40px;
 	width: 100%;
 	height: 40px;
+	color: white;
 }
 
-
-@media (min-width: 1400px)
+@media (min-width: 1200px)
 .container {
-    max-width: 1340px;
+    max-width: none;
+}
+@media (min-width: 992px)
+.container {
+    max-width: none;
+}
+@media (min-width: 768px)
+.container {
+    max-width: none;
+}
+@media (min-width: 576px)
+.container {
+    max-width: none;
 }

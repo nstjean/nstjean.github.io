@@ -8,6 +8,4 @@ $(document).ready(function() {
 		document.getElementById('menu-right').classList.toggle('active');
 		document.getElementById('nav-bar').classList.toggle('active');
 	});
-
-
 })
